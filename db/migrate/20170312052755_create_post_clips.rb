@@ -4,6 +4,7 @@ class CreatePostClips < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :description
       t.text :content
+      t.integer :board_id
 
       t.timestamps
     end

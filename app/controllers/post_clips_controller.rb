@@ -48,6 +48,6 @@ class PostClipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_clip_params
-      params.require(:post_clip).permit(:name, :description, :content)
+      params.require(:post_clip).permit(:name, :description, :content,:board_id)
     end
 end
