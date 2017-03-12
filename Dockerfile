@@ -15,6 +15,3 @@ ADD Gemfile.lock /PostClips/Gemfile.lock
 RUN bundle install
 
 ADD . /PostClips
-
-EXPOSE 3000
-CMD rails server -b 0.0.0.0 -P /tmp/server.pid

@@ -1,0 +1,2 @@
+class PostClip < ApplicationRecord
+end
