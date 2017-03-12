@@ -1,14 +1,20 @@
- FROM ruby:2.3
+FROM ruby:2.3
 
- RUN apt-get update -yqq\
-  && apt-get install -yqq --no-install-recommends\
-    postgresql-client\
-    && rm -rf /va/lib/apt/lists
+RUN apt-get update -yqq \
+  && apt-get install -yqq --no-install-recommends \
+    postgresql-client \
+    && rm -rf /var/lib/apt/lists
 
-WORKDIR /usr/scr/app
-COPY Gemfile* .
+
+RUN mkdir /PostClips
+WORKDIR /PostClips
+
+ADD Gemfile /PostClips/Gemfile
+ADD Gemfile.lock /PostClips/Gemfile.lock
+
 RUN bundle install
-COPY . .
+
+ADD . /PostClips
 
 EXPOSE 3000
-CMD rails server -b 0.0.0.0
+CMD rails server -b 0.0.0.0 -P /tmp/server.pid

@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  ps_db:
+    image: postgres
+    env_file: .env
+
+  ps_app:
+    build: .
+    env_file: .env
+    volumes:
+      - .:/PostClips/:rw
+    ports:
+      - "3000:3000"
+    depends_on:
+      - ps_db
