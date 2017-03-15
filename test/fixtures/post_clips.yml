@@ -3,9 +3,13 @@
 one:
   name: MyString
   description: MyString
-  content: 
+  content: MyText
+  image: MyString
+  board_id: 1
 
 two:
   name: MyString
   description: MyString
-  content: 
+  content: MyText
+  image: MyString
+  board_id: 1

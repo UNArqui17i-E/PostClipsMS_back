@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PostClipsControllerTest < ActionDispatch::IntegrationTest
+class Api::V1::PostClipsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @post_clip = post_clips(:one)
   end
@@ -12,7 +12,7 @@ class PostClipsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create post_clip" do
     assert_difference('PostClip.count') do
-      post post_clips_url, params: { post_clip: { content: @post_clip.content, description: @post_clip.description, name: @post_clip.name } }, as: :json
+      post post_clips_url, params: { post_clip: {  } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class PostClipsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update post_clip" do
-    patch post_clip_url(@post_clip), params: { post_clip: { content: @post_clip.content, description: @post_clip.description, name: @post_clip.name } }, as: :json
+    patch post_clip_url(@post_clip), params: { post_clip: {  } }, as: :json
     assert_response 200
   end
 

@@ -1,41 +1,39 @@
-class PostClipsController < ApplicationController
+class Api::V1::PostClipsController < ApplicationController
   before_action :set_post_clip, only: [:show, :update, :destroy]
 
   # GET /post_clips
-  # GET /post_clips.json
   def index
     @post_clips = PostClip.all
+
+    render json: @post_clips
   end
 
   # GET /post_clips/1
-  # GET /post_clips/1.json
   def show
+    render json: @post_clip
   end
 
   # POST /post_clips
-  # POST /post_clips.json
   def create
     @post_clip = PostClip.new(post_clip_params)
 
     if @post_clip.save
-      render :show, status: :created, location: @post_clip
+      render json: @post_clip, status: :created, :location => api_v1_post_clips_path(@post_clip)
     else
       render json: @post_clip.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /post_clips/1
-  # PATCH/PUT /post_clips/1.json
   def update
     if @post_clip.update(post_clip_params)
-      render :show, status: :ok, location: @post_clip
+      render json: @post_clip,:location => api_v1_post_clip_path(@post_clip)
     else
       render json: @post_clip.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /post_clips/1
-  # DELETE /post_clips/1.json
   def destroy
     @post_clip.destroy
   end
@@ -46,8 +44,8 @@ class PostClipsController < ApplicationController
       @post_clip = PostClip.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Only allow a trusted parameter "white list" through.
     def post_clip_params
-      params.require(:post_clip).permit(:name, :description, :content,:board_id)
+      params.require(:post_clip).permit(:name, :description, :content,:image,:board_id)
     end
 end
