@@ -1,5 +1,0 @@
-eval $(docker-machine env rancher-node)
-docker volume prune
-docker images
-docker ps
-docker-compose ps
