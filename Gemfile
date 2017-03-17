@@ -19,6 +19,10 @@ gem 'carrierwave'
 gem 'fog-rackspace'
 gem 'mini_magick'
 
+# Validators
+gem "validate_url"
+gem 'file_validators'
+
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', :require => 'rack/cors'
