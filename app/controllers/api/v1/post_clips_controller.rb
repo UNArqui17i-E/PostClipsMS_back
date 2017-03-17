@@ -46,6 +46,6 @@ class Api::V1::PostClipsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_clip_params
-      params.require(:post_clip).permit(:name, :description, :content,:image,:board_id)
+      params.require(:post_clip).permit(:name, :description, :content,:image ,:board_id)
     end
 end
