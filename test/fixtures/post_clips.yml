@@ -3,13 +3,13 @@
 one:
   name: MyString
   description: MyString
-  content: MyText
-  image: MyString
+  contentLink: MyText
+  attachment: MyString
   board_id: 1
 
 two:
   name: MyString
   description: MyString
-  content: MyText
-  image: MyString
+  contentLink: MyText
+  attachment: MyString
   board_id: 1
