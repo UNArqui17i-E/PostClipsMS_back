@@ -13,6 +13,11 @@ class Api::V1::PostClipsController < ApplicationController
     render json: @post_clip
   end
 
+  def clips_by_board
+    @post_clip = PostClip.clips_by_board(params[:board_id])
+    render json: @post_clip
+  end
+
   # POST /post_clips
   def create
     @post_clip = PostClip.new(post_clip_params)
@@ -41,7 +46,7 @@ class Api::V1::PostClipsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post_clip
-      @post_clip = PostClip.find(params[:id])
+      @post_clip = PostClip.clips_by_id(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
