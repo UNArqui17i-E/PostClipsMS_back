@@ -30,7 +30,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    "images/default.jpg"
+    "http://242ecb600254516369b7-556c8ba6d9e0625be4240ec2211647d6.r90.cf1.rackcdn.com/uploads/post_clip/default/default.jpg"
   end
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
