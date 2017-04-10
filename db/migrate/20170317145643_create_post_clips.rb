@@ -3,7 +3,7 @@ class CreatePostClips < ActiveRecord::Migration[5.0]
     create_table :post_clips do |t|
       t.string :name
       t.string :description
-      t.text :contentLink
+      t.text :contentLink  , default: "https://www.google.com"
       t.string :attachment
       t.integer :board_id
 
