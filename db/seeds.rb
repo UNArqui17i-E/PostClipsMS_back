@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+100.times do |i|
+  PostClip.create(
+    name: "Clip number ##{i}",
+    description: "This is the clip ##{i}",
+    contentLink: "https://goo.gl/images/WSG0OO",
+    board_id:"#{i % 5}"
+    )
+end
