@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(version: 20170317145643) do
   create_table "post_clips", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.text     "contentLink"
+    t.text     "contentLink", default: "https://www.google.com"
     t.string   "attachment"
     t.integer  "board_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
 
 end
