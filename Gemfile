@@ -21,6 +21,7 @@ gem 'mini_magick'
 
 # Validators
 gem "validate_url"
+
 gem 'file_validators'
 
 
