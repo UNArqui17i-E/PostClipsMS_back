@@ -16,7 +16,7 @@ gem 'puma', '~> 3.0'
 # CarrierWave gem to upload images
 
 gem 'carrierwave'
-gem 'fog'
+gem 'fog-rackspace'
 gem 'mini_magick'
 
 # Validators
